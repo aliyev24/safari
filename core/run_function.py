@@ -11,23 +11,25 @@ CHILDREN_AGES = [
 
 
 def run(
-        day_of_month: int = 1,
-        month: int = 6,
+        # day_of_month: int = 1,
+        # month: int = 6,
+        flight_date: str = '20240601',
         nights: int = 7,
         adult: int = 2,
         child: int = 0,
         children_ages: list = [],
-        proxies_in_work: list = None,
-        proxies: list = None,
+        # proxies_in_work: list = None,
+        # proxies: list = None,
 ):
-    start_time = time.time()
+    # start_time = time.time()
 
-    day = str(day_of_month).zfill(2)  # for example -> 01,02,03
-    month = str(month).zfill(2)
+    # day = str(day_of_month).zfill(2)  # for example -> 01,02,03
+    # month = str(month).zfill(2)
 
     params = params_generator.params_generator(
-        from_date=f'2024{month}{day}',
-        till_date=f'2024{month}{day}',
+        # from_date=f'2024{month}{day}',
+        # till_date=f'2024{month}{day}',
+        flight_date=flight_date,
         nights_from=nights,
         nights_till=nights,
         adult=adult,

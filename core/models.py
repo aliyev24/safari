@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# Models not used for now.
 class City(models.Model):
     name = models.CharField(max_length=255)
 

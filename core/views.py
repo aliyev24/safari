@@ -6,13 +6,15 @@ def create_tour(request):
     if request.method == 'POST':
         form = forms.TourForm(request.POST)
         if form.is_valid():
+            flight_date = form.cleaned_data['from_date']  # Flight date.
             night_from = form.cleaned_data['night_from']
             night_till = form.cleaned_data['night_till']
+            nights = (night_till-night_from).days
             adult = form.cleaned_data['adult']
             child = form.cleaned_data['child']
-            results = run_function.run(day_of_month=21,
-                                       month=7,
-                                       nights=6,
+            results = run_function.run(
+                                       flight_date=flight_date,
+                                       nights=nights,
                                        adult=adult,
                                        child=child,
                                        )
